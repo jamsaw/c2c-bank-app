@@ -1,4 +1,3 @@
-# 1. Note the variable login_types, the list of account types.
 login_types = ["admin", "user", "guest"]
 # 2. Complete the function called gatekeeper that returns the following error message strings in the following scenarios:
 # For “admin”:
@@ -10,6 +9,10 @@ login_types = ["admin", "user", "guest"]
 def gatekeeper(login):
   if login == "admin":
     return "You have the privileges"
+  elif login == "user":
+      return "You Have Limted privileges."
+  elif login == "guest":
+      return "You Have No Privileges."
 
 # 3. Call the gatekeeper function with a string and print what it returns.
 print(gatekeeper("admin"))
