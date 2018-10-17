@@ -1,21 +1,13 @@
-login_types = ["admin", "user", "guest"]
-# 2. Complete the function called gatekeeper that returns the following error message strings in the following scenarios:
-# For “admin”:
-# program says “You have the privileges.”
-# For “user”:
-# program says “You have limited privileges.”
-# For “guest”:
-# program says “You have no privileges.”
-def gatekeeper(login):
-  if login == "admin":
-    return "You have the privileges"
-  elif login == "user":
-      return "You Have Limted privileges."
+login_types = ["Admin", "Moderator", "user", "guest"]
+def gatekeeper(login, account_age):
+  if login == "Admin" or "Moderator":
+    return "You Have all Access"
+  elif login == "user" and account_age <= 7:
+      return "You Have Have Some access."
   elif login == "guest":
       return "You Have No Privileges."
-
-# 3. Call the gatekeeper function with a string and print what it returns.
-print(gatekeeper("admin"))
+account_age=7
+print(gatekeeper("guest", account_age))
 
 # 4. How could this code be improved? Make it better. Think about what other scenarios you should cover in your if logic.
 
